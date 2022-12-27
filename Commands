@@ -1,3 +1,5 @@
+# Commands used for this exercice.
+
 docker volume create --name share
   docker run -it --name ubuntu1 -v share:/tmp -d ubuntu /bin/bash 
   docker run -it --name ubuntu2 -v share:/tmp -d ubuntu /bin/bash 
