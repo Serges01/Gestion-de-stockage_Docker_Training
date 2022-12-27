@@ -1,0 +1,15 @@
+docker volume create --name share
+  docker run -it --name ubuntu1 -v share:/tmp -d ubuntu /bin/bash 
+  docker run -it --name ubuntu2 -v share:/tmp -d ubuntu /bin/bash 
+  docker exec -it ubuntu1 /bin/bash
+  docker exec -it ubuntu2 /bin/bash
+  git clone https://github.com/diranetafen/static-website-example.git
+  ls
+  docker run --name webserver -p 80:80 -d -v ${PWD}/static-website-example:/usr/local/apache2/htdocs/ httpd
+  docker ps
+  docker logs webserver
+  ls
+  cd static-website-example
+  ls
+  cat index.html
+  vi index.html
